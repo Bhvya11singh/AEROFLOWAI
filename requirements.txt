@@ -8,4 +8,4 @@ joblib
 fastapi
 uvicorn
 streamlit-autorefresh
-pillow
+pillow==10.2.0
