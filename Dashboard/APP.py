@@ -3,13 +3,16 @@ import networkx as nx
 import plotly.graph_objects as go
 import numpy as np
 import joblib
+import random
 
+from streamlit_autorefresh import st_autorefresh
 from simulations.aircraft_graph import AircraftHydraulicSystem
 
 # -----------------------------
 # PAGE CONFIG (NASA STYLE)
 # -----------------------------
-st.set_page_config(
+st.set_page_config# Auto refresh every 1 second (LIVE MODE)
+st_autorefresh(interval=1000, key="live_simulation")(
     page_title="Aerospace Hydraulic Control Center",
     layout="wide"
 )
@@ -27,10 +30,9 @@ model = joblib.load("hydraulic_failure_model.pkl")
 # -----------------------------
 st.sidebar.header("Mission Parameters")
 
-wind_speed = st.sidebar.slider("Wind Speed (km/h)", 20, 120, 60)
-turbulence = st.sidebar.slider("Turbulence Index", 0.5, 3.0, 1.2)
-route_risk = st.sidebar.slider("Route Risk Score", 0.0, 6.0, 2.0)
-
+wind_speed = random.randint(20, 120)
+turbulence = round(random.uniform(0.5, 3.0), 2)
+route_risk = round(random.uniform(0.0, 6.0), 2)
 # -----------------------------
 # PREDICTION ENGINE
 # -----------------------------
