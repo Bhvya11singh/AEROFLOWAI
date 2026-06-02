@@ -1,0 +1,10 @@
+streamlit
+networkx
+plotly
+numpy
+pandas
+scikit-learn
+joblib
+fastapi
+uvicorn
+streamlit-autorefresh
