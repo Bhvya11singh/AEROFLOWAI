@@ -1,11 +1,5 @@
-streamlit
 networkx
-plotly
+matplotlib
 numpy
 pandas
 scikit-learn
-joblib
-fastapi
-uvicorn
-streamlit-autorefresh
-pillow==10.2.0

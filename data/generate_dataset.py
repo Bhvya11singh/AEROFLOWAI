@@ -12,19 +12,15 @@ def generate_dataset(num_samples=1000):
 
     for _ in range(num_samples):
 
-        # Random environmental conditions
         wind_speed = random.randint(20, 80)
-
         turbulence = round(random.uniform(0.5, 2.0), 2)
 
-        # Build aircraft system
         system = AircraftHydraulicSystem()
-
         system.build_aircraft()
 
         simulator = StressSimulator()
 
-        # Dynamically assign stress
+        # assign dynamic stress
         for edge in system.graph.edges:
 
             destination_component = edge[1]
@@ -37,7 +33,6 @@ def generate_dataset(num_samples=1000):
 
             system.graph.edges[edge]["stress"] = stress
 
-        # Risk analysis
         analyzer = HydraulicRiskAnalyzer(system.graph)
 
         route = [
@@ -49,7 +44,6 @@ def generate_dataset(num_samples=1000):
 
         route_risk = analyzer.calculate_route_risk(route)
 
-        # Failure condition
         failure = 1 if route_risk > 3.5 else 0
 
         dataset.append({
