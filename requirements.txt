@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 networkx
 matplotlib
 numpy
 pandas
 scikit-learn
-=======
 flask
 networkx
 numpy
@@ -12,4 +10,4 @@ pandas
 scikit-learn
 joblib
 matplotlib
->>>>>>> 675e4f815063d2b2c28dd058aba38954c54097bc
+
